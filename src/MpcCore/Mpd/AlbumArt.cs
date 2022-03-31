@@ -34,7 +34,7 @@ namespace MpcCore.Mpd
 		/// <returns>Task</returns>
 		public async Task SaveAsFile(string path)
 		{
-			await File.WriteAllBytesAsync(path, Bytes);
+			File.WriteAllBytes(path, Bytes);
 		}
 	}
 }

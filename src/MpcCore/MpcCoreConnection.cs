@@ -232,8 +232,8 @@ namespace MpcCore
 					{
 						endReached = true;
 					}
-
-					var split = line.Split(": ");
+					string[] stringSeparators = new string[] { ": " };
+					var split = line.Split(stringSeparators, StringSplitOptions.None);
 					if (split.Length > 1)
 					{
 						switch (split[0])

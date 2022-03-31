@@ -297,7 +297,7 @@ namespace MpcCore.Response
 
 				if (item.Key == ResponseParserKeys.Sticker && !string.IsNullOrEmpty(item.Value))
 				{
-					var split = item.Value.Split('=', 2);
+					var split = item.Value.Split('=');
 
 					var sticker = new Sticker()
 					{
@@ -478,6 +478,9 @@ namespace MpcCore.Response
 						break;
 					case ResponseParserKeys.Elapsed:
 						status.Elapsed = double.Parse(kv.Value, System.Globalization.CultureInfo.InvariantCulture);
+						break;
+					case ResponseParserKeys.Xfade:
+						status.Crossfade = Convert.ToInt32(kv.Value);
 						break;
 					case ResponseParserKeys.Duration:
 						status.Duration = double.Parse(kv.Value, System.Globalization.CultureInfo.InvariantCulture);
@@ -778,7 +781,7 @@ namespace MpcCore.Response
 			{
 				if (path.Contains("/"))
 				{
-					list.AddRange(path.Split("/"));
+					list.AddRange(path.Split('/'));
 				}
 				else
 				{

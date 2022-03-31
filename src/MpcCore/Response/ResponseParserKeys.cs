@@ -49,6 +49,7 @@ namespace MpcCore.Response
 		public const string MixRampDelay = "mixrampdelay";
 		public const string Audio = "audio";
 		public const string Error = "error";
+		public const string Xfade = "xfade";
 
 		// output devices
 		public const string OutputDeviceId = "outputid";

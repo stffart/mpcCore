@@ -187,8 +187,18 @@ namespace MpcCore
 			string responseLine;
 			do
 			{
-				responseLine = await _reader.ReadLineAsync() ?? string.Empty;
-				response.RawResponse.Add(responseLine);
+				try
+				{
+
+					responseLine = await _reader.ReadLineAsync() ?? string.Empty;
+					response.RawResponse.Add(responseLine);
+				}
+				catch (Exception e)
+				{
+					// TODO: communicate the error clearly
+					Console.WriteLine(e.Message);
+					return response;
+				}
 			}
 			while (!(responseLine.Equals(Constants.Ok) || responseLine.StartsWith(Constants.Ack)));
 

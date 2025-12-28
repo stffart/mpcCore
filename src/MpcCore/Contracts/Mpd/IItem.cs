@@ -32,6 +32,7 @@ namespace MpcCore.Contracts.Mpd
 		string Title { get; }
 		int Track { get; }
 		string Work { get; }
+		bool Like { get; }
 		IEnumerable<string> GetTagValues(string tagName);
 	}
 }

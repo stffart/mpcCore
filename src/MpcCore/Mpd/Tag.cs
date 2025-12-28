@@ -142,5 +142,11 @@
 		/// <seealso cref="https://picard.musicbrainz.org/docs/mappings/"/>
 		/// </summary>
 		public const string MusicBrainzWorkId = "musicbrainz_workid";
+
+		/// <summary>
+		/// Shows like on item
+		/// </summary>
+		public const string Like = "like";
+
 	}
 }

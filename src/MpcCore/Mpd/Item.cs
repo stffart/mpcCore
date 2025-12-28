@@ -201,5 +201,20 @@ namespace MpcCore.Mpd
 		{
 			return MetaData.ContainsKey(key) ? MetaData[key].FirstOrDefault() ?? string.Empty : string.Empty;
 		}
+
+		private bool _getLike()
+		{
+			if (MetaData.ContainsKey(Tag.Like)) {
+				return MetaData[Tag.Like].Contains("True");
+            }
+			return false;
+		}
+
+
+		/// <summary>
+		/// A work is a distinct intellectual or artistic creation, which can be expressed in the form of one or more audio recordings.
+		/// Could be anything.
+		/// </summary>
+		public bool Like => _getLike();
 	}
 }

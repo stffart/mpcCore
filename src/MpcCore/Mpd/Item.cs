@@ -212,8 +212,7 @@ namespace MpcCore.Mpd
 
 
 		/// <summary>
-		/// A work is a distinct intellectual or artistic creation, which can be expressed in the form of one or more audio recordings.
-		/// Could be anything.
+		/// Check if track was liked by user
 		/// </summary>
 		public bool Like => _getLike();
 	}
